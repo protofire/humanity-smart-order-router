@@ -46,6 +46,7 @@ import {
   USDC_ZKSYNC,
   USDT_ARBITRUM,
   USDT_BNB,
+  USDT_HUMANITY,
   USDT_MAINNET,
   USDT_OPTIMISM,
   WBTC_ARBITRUM,
@@ -158,6 +159,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_ANIME_TESTNET,
   ],
   [ChainId.ANIME]: [WRAPPED_NATIVE_CURRENCY[ChainId.ANIME]!, USDC_ANIME],
+  [ChainId.HUMANITY]: [WRAPPED_NATIVE_CURRENCY[ChainId.HUMANITY]!, USDT_HUMANITY],
   [ChainId.MODE]: [WRAPPED_NATIVE_CURRENCY[ChainId.MODE]!, USDC_MODE],
 };
 
@@ -174,7 +176,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * @class StaticV2SubgraphProvider
  */
 export class StaticV2SubgraphProvider implements IV2SubgraphProvider {
-  constructor(private chainId: ChainId) {}
+  constructor(private chainId: ChainId) { }
 
   public async getPools(
     tokenIn?: Token,

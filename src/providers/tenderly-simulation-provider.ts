@@ -158,6 +158,7 @@ export const TENDERLY_NOT_SUPPORTED_CHAINS = [
   ChainId.ABSTRACT_MAINNET,
   ChainId.ANIME_TESTNET,
   ChainId.ANIME,
+  ChainId.HUMANITY,
   ChainId.MODE,
 ];
 

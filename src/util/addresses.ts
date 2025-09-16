@@ -59,6 +59,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.ANIME_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME_TESTNET].v3CoreFactoryAddress,
   [ChainId.ANIME]: CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME].v3CoreFactoryAddress,
+  [ChainId.HUMANITY]: CHAIN_TO_ADDRESSES_MAP[ChainId.HUMANITY].v3CoreFactoryAddress,
   [ChainId.MODE]: CHAIN_TO_ADDRESSES_MAP[ChainId.MODE].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -175,6 +176,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.ANIME_TESTNET]:
     CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME_TESTNET].multicallAddress,
   [ChainId.ANIME]: CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME].multicallAddress,
+  [ChainId.HUMANITY]: CHAIN_TO_ADDRESSES_MAP[ChainId.HUMANITY].multicallAddress,
   [ChainId.MODE]: CHAIN_TO_ADDRESSES_MAP[ChainId.MODE].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -414,6 +416,13 @@ export const WETH9: {
     18,
     'WANIME',
     'Wrapped ANIME'
+  ),
+  [ChainId.HUMANITY]: new Token(
+    ChainId.HUMANITY,
+    '0x31B1AaE8325C36534549b52d94bC6452f246c41E',
+    18,
+    'WH',
+    'Wrapped HUMANITY'
   ),
   [ChainId.MODE]: new Token(
     ChainId.MODE,

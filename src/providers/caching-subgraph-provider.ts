@@ -48,6 +48,7 @@ import {
   USDC_ZKSYNC,
   USDT_ARBITRUM,
   USDT_BNB,
+  USDT_HUMANITY,
   USDT_MAINNET,
   USDT_OPTIMISM,
   WBTC_ARBITRUM,
@@ -159,6 +160,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_ANIME_TESTNET,
   ],
   [ChainId.ANIME]: [WRAPPED_NATIVE_CURRENCY[ChainId.ANIME]!, USDC_ANIME],
+  [ChainId.HUMANITY]: [WRAPPED_NATIVE_CURRENCY[ChainId.HUMANITY]!, USDT_HUMANITY],
   [ChainId.MODE]: [WRAPPED_NATIVE_CURRENCY[ChainId.MODE]!, USDC_MODE],
 };
 
@@ -180,8 +182,7 @@ export interface ISubgraphProvider<TSubgraphPool extends SubgraphPool> {
 
 export abstract class CachingSubgraphProvider<
   TSubgraphPool extends SubgraphPool
-> implements ISubgraphProvider<TSubgraphPool>
-{
+> implements ISubgraphProvider<TSubgraphPool> {
   private SUBGRAPH_KEY = (chainId: ChainId) =>
     `subgraph-pools-${this.protocol}-${chainId}`;
 
@@ -197,7 +198,7 @@ export abstract class CachingSubgraphProvider<
     protected subgraphProvider: ISubgraphProvider<TSubgraphPool>,
     private cache: ICache<TSubgraphPool[]>,
     private protocol: Protocol
-  ) {}
+  ) { }
 
   public async getPools(): Promise<TSubgraphPool[]> {
     const cachedPools = await this.cache.get(this.SUBGRAPH_KEY(this.chainId));

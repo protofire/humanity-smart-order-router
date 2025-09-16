@@ -65,6 +65,7 @@ import {
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_GOERLI,
+  USDT_HUMANITY,
   USDT_MAINNET,
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
@@ -145,6 +146,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.ABSTRACT_MAINNET]: [USDC_ABSTRACT_MAINNET],
   [ChainId.ANIME_TESTNET]: [USDC_ANIME_TESTNET],
   [ChainId.ANIME]: [USDC_ANIME],
+  [ChainId.HUMANITY]: [USDT_HUMANITY],
   [ChainId.MODE]: [USDC_MODE],
 };
 

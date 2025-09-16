@@ -195,6 +195,7 @@ export enum ChainName {
   REDSTONE_GARNET = 'redstone-garnet',
   ABSTRACT_MAINNET = 'abstract',
   ANIME_TESTNET = 'anime-testnet',
+  HUMANITY = 'humanity',
   ANIME = 'anime',
   MODE = 'mode',
 }
@@ -210,6 +211,7 @@ export enum NativeCurrencyName {
   AVALANCHE = 'AVAX',
   ANIME_TESTNET = 'ANIME',
   ANIME = 'ANIME',
+  HUMANITY = 'HUMANITY',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -340,6 +342,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ANIME',
     '0x0000000000000000000000000000000000000000',
   ],
+  [ChainId.HUMANITY]: [
+    'H',
+    'HUMANITY',
+    '0x0000000000000000000000000000000000000000',
+  ],
   [ChainId.MODE]: [
     'ETH',
     'ETHER',
@@ -380,6 +387,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.ABSTRACT_MAINNET]: NativeCurrencyName.ETHER,
   [ChainId.ANIME_TESTNET]: NativeCurrencyName.ETHER,
   [ChainId.ANIME]: NativeCurrencyName.ANIME,
+  [ChainId.HUMANITY]: NativeCurrencyName.HUMANITY,
   [ChainId.MODE]: NativeCurrencyName.ETHER,
 };
 
@@ -451,6 +459,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.ANIME_TESTNET;
     case 69000:
       return ChainName.ANIME;
+    case 6985385:
+      return ChainName.HUMANITY;
     case 34443:
       return ChainName.MODE;
     default:
@@ -524,6 +534,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_ANIME_TESTNET!;
     case ChainId.ANIME:
       return process.env.JSON_RPC_PROVIDER_ANIME!;
+    case ChainId.HUMANITY:
+      return process.env.JSON_RPC_PROVIDER_HUMANITY!;
     case ChainId.MODE:
       return process.env.JSON_RPC_PROVIDER_MODE!;
     default:
@@ -778,6 +790,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WANIME',
     'Wrapped ANIME'
+  ),
+  [ChainId.HUMANITY]: new Token(
+    ChainId.HUMANITY,
+    '0x31B1AaE8325C36534549b52d94bC6452f246c41E',
+    18,
+    'WH',
+    'Wrapped HUMANITY'
   ),
   [ChainId.MODE]: new Token(
     ChainId.MODE,

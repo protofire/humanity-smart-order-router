@@ -62,6 +62,7 @@ import {
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_GOERLI,
+  USDT_HUMANITY,
   USDT_MAINNET,
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
@@ -213,6 +214,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_ANIME_TESTNET,
   ],
   [ChainId.ANIME]: [WRAPPED_NATIVE_CURRENCY[ChainId.ANIME]!, USDC_ANIME],
+  [ChainId.HUMANITY]: [WRAPPED_NATIVE_CURRENCY[ChainId.HUMANITY]!, USDT_HUMANITY],
   [ChainId.MODE]: [WRAPPED_NATIVE_CURRENCY[ChainId.MODE]!, USDC_MODE],
 };
 
@@ -231,7 +233,7 @@ export class StaticV3SubgraphProvider implements IV3SubgraphProvider {
   constructor(
     private chainId: ChainId,
     private poolProvider: IV3PoolProvider
-  ) {}
+  ) { }
 
   public async getPools(
     tokenIn?: Token,
