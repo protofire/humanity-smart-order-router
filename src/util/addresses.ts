@@ -102,6 +102,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME_TESTNET].quoterAddress,
   [ChainId.MODE]: CHAIN_TO_ADDRESSES_MAP[ChainId.MODE].quoterAddress,
   [ChainId.ANIME]: CHAIN_TO_ADDRESSES_MAP[ChainId.ANIME].quoterAddress,
+  [ChainId.HUMANITY]: CHAIN_TO_ADDRESSES_MAP[ChainId.HUMANITY].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
