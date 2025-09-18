@@ -8,34 +8,35 @@ import {
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
-  ChainId.MAINNET,
-  ChainId.OPTIMISM,
-  ChainId.OPTIMISM_GOERLI,
-  ChainId.OPTIMISM_SEPOLIA,
-  ChainId.ARBITRUM_ONE,
-  ChainId.ARBITRUM_GOERLI,
-  ChainId.ARBITRUM_SEPOLIA,
-  ChainId.POLYGON,
-  ChainId.POLYGON_MUMBAI,
-  ChainId.SEPOLIA,
-  ChainId.CELO_ALFAJORES,
-  ChainId.CELO,
-  ChainId.BNB,
-  ChainId.AVALANCHE,
-  ChainId.BASE,
-  ChainId.BLAST,
-  ChainId.ZORA,
-  ChainId.ZKSYNC,
-  ChainId.ABSTRACT_TESTNET,
-  ChainId.ZERO,
-  ChainId.BOB,
-  ChainId.CYBER,
-  ChainId.SHAPE,
-  ChainId.INK,
-  ChainId.ABSTRACT_MAINNET,
-  ChainId.ANIME_TESTNET,
-  ChainId.ANIME,
-  ChainId.MODE,
+  // ChainId.MAINNET,
+  // ChainId.OPTIMISM,
+  // ChainId.OPTIMISM_GOERLI,
+  // ChainId.OPTIMISM_SEPOLIA,
+  // ChainId.ARBITRUM_ONE,
+  // ChainId.ARBITRUM_GOERLI,
+  // ChainId.ARBITRUM_SEPOLIA,
+  // ChainId.POLYGON,
+  // ChainId.POLYGON_MUMBAI,
+  // ChainId.SEPOLIA,
+  // ChainId.CELO_ALFAJORES,
+  // ChainId.CELO,
+  // ChainId.BNB,
+  // ChainId.AVALANCHE,
+  // ChainId.BASE,
+  // ChainId.BLAST,
+  // ChainId.ZORA,
+  // ChainId.ZKSYNC,
+  // ChainId.ABSTRACT_TESTNET,
+  // ChainId.ZERO,
+  // ChainId.BOB,
+  // ChainId.CYBER,
+  // ChainId.SHAPE,
+  // ChainId.INK,
+  // ChainId.ABSTRACT_MAINNET,
+  // ChainId.ANIME_TESTNET,
+  // ChainId.ANIME,
+  // ChainId.MODE,
+  ChainId.HUMANITY,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -157,6 +158,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.ANIME;
     case 34443:
       return ChainId.MODE;
+    case 6985385:
+      return ChainId.HUMANITY;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
